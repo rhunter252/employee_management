@@ -3,10 +3,17 @@ import { Inter } from "next/font/google";
 import { BiUserPlus } from "react-icons/bi";
 import Table from "../components/Table";
 import Form from "../components/Form";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [visible, setVisible] = useState(false);
+
+  const handler = () => {
+    setVisible(!visible);
+  };
+
   return (
     <>
       <Head>
@@ -22,8 +29,11 @@ export default function Home() {
 
         <div className="container mx-auto flex justify-between py-5 border-b-2">
           <div className="left flex gap-3">
-            <button className="flex bg-indigo-500 text-white px-4 py-2 border rounded-md hover:bg-gray-50 hover:border-indigo-500 hover:text-indigo-500">
-              Add Employee{" "}
+            <button
+              className="flex bg-indigo-500 text-white px-4 py-2 border rounded-md hover:bg-gray-50 hover:border-indigo-500 hover:text-indigo-500"
+              onClick={handler}
+            >
+              Add Employee
               <span className="px-1">
                 <BiUserPlus size={23}></BiUserPlus>
               </span>
@@ -32,7 +42,7 @@ export default function Home() {
         </div>
         {/* collapsible form */}
         <div className="container mx-auto py-5">
-          <Form />
+          {visible ? <Form></Form> : <></>}
         </div>
         <div className="container mx-auto">
           <Table />

@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { BiPlus } from "react-icons/bi";
+import { BiBrush } from "react-icons/bi";
 import Success from "./Success";
 import Bug from "./Bug";
 
@@ -100,12 +100,12 @@ const UpdateUserForm = () => {
         </div>
       </div>
       <button
-        className="flex justify-center text-md w-2/6 bg-green-500 text-white px-4 py-2 border rounded-md hover:bg-gray-50 hover:border-green-500 hover:text-green-500"
+        className="flex justify-center text-md w-2/6 bg-yellow-400 text-white px-4 py-2 border rounded-md hover:bg-gray-50 hover:border-yellow-500 hover:text-yellow-500"
         onClick={handleSubmit}
       >
-        Add
+        Update
         <span>
-          <BiPlus size={23} />
+          <BiBrush size={23} />
         </span>
       </button>
     </form>
